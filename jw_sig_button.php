@@ -12,7 +12,7 @@ defined('_JEXEC') or die ;
 
 //jimport('joomla.plugin.plugin');
 
-class plgButtonJw_SigPro extends JPlugin
+class plgButtonJw_Sig_Button extends JPlugin
 {
 
 	protected $autoloadLanguage = true; 
