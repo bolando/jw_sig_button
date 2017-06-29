@@ -19,7 +19,7 @@ class plgButtonJw_Sig_Button extends JPlugin
 
 	function onDisplay($name)
 	{
-		$link = 'index.php?option=com_menus&amp;view=items&amp;layout=modal&amp;tmpl=component&amp;'
+		$link = 'index.php?option=com_media&amp;view=images&amp;layout=modal&amp;tmpl=component&amp;'
 			. JSession::getFormToken() . '=1&amp;editor=' . $name;
 
 		$button          = new JObject;
