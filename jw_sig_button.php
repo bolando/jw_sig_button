@@ -15,11 +15,7 @@ defined('_JEXEC') or die ;
 class plgButtonJw_SigPro extends JPlugin
 {
 
-	public function __construct(&$subject, $config)
-	{
-		parent::__construct($subject, $config);
-		$this->loadLanguage('', JPATH_ADMINISTRATOR);
-	}
+	protected $autoloadLanguage = true; 
 
 	function onDisplay($name)
 	{
@@ -31,7 +27,7 @@ class plgButtonJw_SigPro extends JPlugin
 		$button->class   = 'btn';
 		$button->link    = $link;
 		$button->text    = 'galeria';
-		$button->name    = 'share-alt';
+		$button->name    = 'Gallery';
 		$button->options = "{handler: 'iframe', size: {x: 800, y: 500}}";
 
 		return $button;
