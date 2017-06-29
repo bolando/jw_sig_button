@@ -10,7 +10,7 @@
 // no direct access
 defined('_JEXEC') or die ;
 
-jimport('joomla.plugin.plugin');
+//jimport('joomla.plugin.plugin');
 
 class plgButtonJw_SigPro extends JPlugin
 {
@@ -23,7 +23,19 @@ class plgButtonJw_SigPro extends JPlugin
 
 	function onDisplay($name)
 	{
-		$document = JFactory::getDocument();
+		$link = 'index.php?option=com_menus&amp;view=items&amp;layout=modal&amp;tmpl=component&amp;'
+			. JSession::getFormToken() . '=1&amp;editor=' . $name;
+
+		$button          = new JObject;
+		$button->modal   = true;
+		$button->class   = 'btn';
+		$button->link    = $link;
+		$button->text    = 'galeria';
+		$button->name    = 'share-alt';
+		$button->options = "{handler: 'iframe', size: {x: 800, y: 500}}";
+
+		return $button;
+		/*$document = JFactory::getDocument();
 		if (version_compare(JVERSION, '3.0', 'lt'))
 		{
 			$document->addScript('//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js');
@@ -64,7 +76,7 @@ class plgButtonJw_SigPro extends JPlugin
 		{
 			$button->class = 'btn';
 		}
-		return $button;
+		return $button;*/
 	}
 
 }
